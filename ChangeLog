@@ -1,5 +1,12 @@
 2020-01-23  Thien-Thi Nguyen  <ttn@gnu.org>
 
+	[C int] Add forward delcs for "aux stuff" funcs.
+
+	* superopt.c (ffs_internal, floor_log2, ceil_log2):
+	Add forward decls prior to ‘insn_name’ declaration.
+
+2020-01-23  Thien-Thi Nguyen  <ttn@gnu.org>
+
 	[C int] Convert some funcs from K&R style to prototypes.
 
 	* superopt.c (ffs_internal, floor_log2, ceil_log2): ...here.

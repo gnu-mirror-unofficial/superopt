@@ -76,6 +76,11 @@ unsigned int heuristic_reject_count = 0;
 unsigned int heuristic_accept_count = 0;
 #endif
 
+/* Forward decls for the "aux stuff" below.  */
+int ffs_internal (word x);
+int floor_log2 (word x);
+int ceil_log2 (word x);
+
 char *insn_name[] =
 {
 #undef	DEF_INSN
