@@ -2995,8 +2995,7 @@ main(int argc, char **argv)
 /* Aux stuff that should go into a separate file.  */
 
 int
-ffs_internal(x)
-     word x;
+ffs_internal (word x)
 {
   int co, ci = -1;
   word d;
@@ -3005,8 +3004,7 @@ ffs_internal(x)
 }
 
 int
-floor_log2 (x)
-     word x;
+floor_log2 (word x)
 {
   register int log = -1;
   while (x != 0)
@@ -3016,8 +3014,7 @@ floor_log2 (x)
 }
 
 int
-ceil_log2 (x)
-     word x;
+ceil_log2 (word x)
 {
   return floor_log2 (x - 1) + 1;
 }
