@@ -157,6 +157,7 @@ typedef unsigned_word word;
 #define TRUNC_CNT(cnt) ((unsigned) (cnt) % BITS_PER_WORD)
 
 #if defined(sparc) || defined(__GNUC__)
+#undef alloca
 #define alloca __builtin_alloca
 #endif
 
@@ -228,40 +229,40 @@ typedef struct
 
 #if sparc
 #define PERFORM_ADD_CIO(d, co, r1, r2, ci) \
-  asm ("subcc %%g0,%4,%%g0	! set cy if CI != 0
-	addxcc %2,%3,%0		! add R1 and R2
+  asm ("subcc %%g0,%4,%%g0	! set cy if CI != 0             \n\
+	addxcc %2,%3,%0		! add R1 and R2                 \n\
 	addx %%g0,%%g0,%1	! set CO to cy"				\
        : "=r" (d), "=r" (co)						\
        : "%r" (r1), "rI" (r2), "rI" (ci)				\
        __CLOBBER_CC)
 #define PERFORM_ADD_CO(d, co, r1, r2, ci) \
-  asm ("addcc %2,%3,%0		! add R1 and R2
+  asm ("addcc %2,%3,%0		! add R1 and R2                 \n\
 	addx %%g0,%%g0,%1	! set CO to cy"				\
        : "=r" (d), "=r" (co)						\
        : "%r" (r1), "rI" (r2)						\
        __CLOBBER_CC)
 #define PERFORM_SUB_CIO(d, co, r1, r2, ci) \
-  asm ("subcc %%g0,%4,%%g0	! set cy if CI != 0
-	subxcc %2,%3,%0		! subtract R2 from R1
+  asm ("subcc %%g0,%4,%%g0	! set cy if CI != 0             \n\
+	subxcc %2,%3,%0		! subtract R2 from R1           \n\
 	addx %%g0,%%g0,%1	! set CO to cy"				\
        : "=r" (d), "=r" (co)						\
        : "r" (r1), "rI" (r2), "rI" (ci)					\
        __CLOBBER_CC)
 #define PERFORM_SUB_CO(d, co, r1, r2, ci) \
-  asm ("subcc %2,%3,%0		! subtract R2 from R1
+  asm ("subcc %2,%3,%0		! subtract R2 from R1           \n\
 	addx %%g0,%%g0,%1	! set CO to cy"				\
        : "=r" (d), "=r" (co)						\
        : "r" (r1), "rI" (r2)						\
        __CLOBBER_CC)
 #define PERFORM_ADC_CIO(d, co, r1, r2, ci) \
-  asm ("subcc %4,1,%%g0		! cy = (CI == 0)
-	subxcc %2,%3,%0		! subtract R2 from R1
+  asm ("subcc %4,1,%%g0		! cy = (CI == 0)                \n\
+	subxcc %2,%3,%0		! subtract R2 from R1           \n\
 	subx %%g0,-1,%1		! set CO to !cy"			\
        : "=&r" (d), "=r" (co)						\
        : "r" (r1), "rI" (r2), "rI" (ci)					\
        __CLOBBER_CC)
 #define PERFORM_ADC_CO(d, co, r1, r2, ci) \
-  asm ("subcc %2,%3,%0		! subtract R2 from R1
+  asm ("subcc %2,%3,%0		! subtract R2 from R1           \n\
 	subx %%g0,-1,%1		! set CO to !cy"			\
        : "=&r" (d), "=r" (co)						\
        : "r" (r1), "rI" (r2)						\
@@ -270,39 +271,39 @@ typedef struct
 
 #if m88k
 #define PERFORM_ADD_CIO(d, co, r1, r2, ci) \
-  asm ("or %0,r0,1
-	subu.co r0,%4,%0	; set cy if CI != 0
-	addu.cio %0,%2,%r3	; add R1 and R2
+  asm ("or %0,r0,1              \n\
+	subu.co r0,%4,%0	; set cy if CI != 0             \n\
+	addu.cio %0,%2,%r3	; add R1 and R2                 \n\
 	addu.ci %1,r0,r0	; set CO to cy"				\
        : "=&r" (d), "=r" (co)						\
        : "%r" (r1), "Or" (r2), "r" (ci))
 #define PERFORM_ADD_CO(d, co, r1, r2, ci) \
-  asm ("addu.co %0,%2,%r3	; add R1 and R2
+  asm ("addu.co %0,%2,%r3	; add R1 and R2                 \n\
 	addu.ci %1,r0,r0	; set CO to cy"				\
        : "=r" (d), "=r" (co)						\
        : "%r" (r1), "Or" (r2))
 #define PERFORM_SUB_CIO(d, co, r1, r2, ci) \
-  asm ("subu.co r0,r0,%r4	; reset cy if CI != 0
-	subu.cio %0,%2,%r3	; subtract R2 from R1
-	subu.ci %1,r0,r0	; set CO to -1+cy
+  asm ("subu.co r0,r0,%r4	; reset cy if CI != 0           \n\
+	subu.cio %0,%2,%r3	; subtract R2 from R1           \n\
+	subu.ci %1,r0,r0	; set CO to -1+cy               \n\
 	subu %1,r0,%1		; set CO to !cy"			\
        : "=r" (d), "=r" (co)						\
        : "r" (r1), "Or" (r2), "Or" (ci))
 #define PERFORM_SUB_CO(d, co, r1, r2, ci) \
-  asm ("subu.co %0,%2,%r3	; subtract R2 from R1
-	subu.ci %1,r0,r0	; set CO to -1+cy
+  asm ("subu.co %0,%2,%r3	; subtract R2 from R1           \n\
+	subu.ci %1,r0,r0	; set CO to -1+cy               \n\
 	subu %1,r0,%1		; set CO to !cy"			\
        : "=r" (d), "=r" (co)						\
        : "r" (r1), "Or" (r2))
 #define PERFORM_ADC_CIO(d, co, r1, r2, ci) \
-  asm ("or %0,r0,1
-	subu.co r0,%r4,%0	; set cy if CI != 0
-	subu.cio %0,%2,%r3	; subtract R2 from R1
+  asm ("or %0,r0,1              \n\
+	subu.co r0,%r4,%0	; set cy if CI != 0             \n\
+	subu.cio %0,%2,%r3	; subtract R2 from R1           \n\
 	addu.ci %1,r0,r0	; set CO to cy"				\
        : "=&r" (d), "=r" (co)						\
        : "r" (r1), "Or" (r2), "Or" (ci))
 #define PERFORM_ADC_CO(d, co, r1, r2, ci) \
-  asm ("subu.co %0,%2,%r3	; subtract R2 from R1
+  asm ("subu.co %0,%2,%r3	; subtract R2 from R1           \n\
 	addu.ci %1,r0,r0	; set CO to cy"				\
        : "=r" (d), "=r" (co)						\
        : "r" (r1), "Or" (r2))

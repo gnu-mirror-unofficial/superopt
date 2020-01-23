@@ -1,5 +1,17 @@
 2020-01-23  Thien-Thi Nguyen  <ttn@gnu.org>
 
+	[C int] Add ‘\n\’ to separate assembly instructions.
+
+	* longlong.h (add_ssaaaa, sub_ddmmss, umul_ppmm)
+	(count_leading_zeros, umul_ppmmxx, udiv_qrnnd):
+	...here, for various architectures.
+	* superopt.h [sparc || __GNUC__]: #undef alloca.
+	(PERFORM_ADD_CIO, PERFORM_ADD_CO, PERFORM_SUB_CIO, PERFORM_SUB_CO)
+	(PERFORM_ADC_CIO, PERFORM_ADC_CO): Add ‘\n\’ to separate assembly
+	instructions, for various architectures.
+
+2020-01-23  Thien-Thi Nguyen  <ttn@gnu.org>
+
 	[C int] Include <stdlib.h> for ‘exit’.
 
 	* superopt.c: #include <stdlib>.
