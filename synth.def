@@ -1,3 +1,23 @@
+/* synth.def
+
+   Copyright (C) 1991-1995, 2020 Free Software Foundation, Inc.
+
+   This file is part of GNU Superopt.
+
+   GNU Superopt is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 3, or (at your option)
+   any later version.
+
+   GNU Superopt is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with GNU Superopt.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 
 /* Recursively investigate all possible instruction sequences for the
    current target.
@@ -4081,7 +4101,7 @@ concmpo		1	c--	ccc
 	 i960:		move	0,d */
       PERFORM_COPY(v, co, VALUE(0), ci);
       RECURSE(COPY, CNST(0), 0, prune_hint & ~CY_JUST_SET);
-		 
+
       /* cy = 100b */
       PERFORM_CMPO_960(v, co, VALUE(0), VALUE(1), ci);
       CRECURSE_2OP(CMPO_960, n_values, CNST(0), CNST(1), 1, CY_JUST_SET | CY_0);
@@ -4092,3 +4112,11 @@ concmpo		1	c--	ccc
 #endif
 }
 #endif
+
+/*
+Local variables:
+mode:c
+End:
+*/
+
+/* synth.def ends here */

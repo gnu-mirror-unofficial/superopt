@@ -156,3 +156,9 @@
 
 * Include a 'synth' function for several targets in one gso binary.  Have a
   command line option -t<target> select which one to use.
+
+
+Copyright (C) 1991-1995, 2020 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted provided the copyright notice and this notice are preserved.

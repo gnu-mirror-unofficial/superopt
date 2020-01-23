@@ -746,10 +746,9 @@ Fri Oct 25 01:01:54 1991  Torbjorn Granlund  (tege@sics.se)
 	"ASHIFTR_CON" for RS/6000 arithmetic right shifts.  (The
 	arithmetic shift insns used to be incorrectly described as not
 	affecting carry.)
+
 
-Local Variables:
-mode: indented-text
-left-margin: 8
-fill-column: 76
-version-control: never
-End:
+Copyright (C) 1991-1995, 2020 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted provided the copyright notice and this notice are preserved.

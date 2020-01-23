@@ -1,20 +1,22 @@
 /* longlong.h -- definitions for mixed size 32/64 bit arithmetic.
 
-Copyright (C) 1991, 1992, 1993, 1994 Free Software Foundation, Inc.
+   Copyright (C) 1991-1994, 2020 Free Software Foundation, Inc.
 
-This file is free software; you can redistribute it and/or modify
-it under the terms of the GNU Library General Public License as published by
-the Free Software Foundation; either version 2 of the License, or (at your
-option) any later version.
+   This file is part of GNU Superopt.
 
-This file is distributed in the hope that it will be useful, but
-WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
-or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Library General Public
-License for more details.
+   GNU Superopt is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 3, or (at your option)
+   any later version.
 
-You should have received a copy of the GNU Library General Public License
-along with this file; see the file COPYING.LIB.  If not, write to
-the Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA. */
+   GNU Superopt is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with GNU Superopt.  If not, see <http://www.gnu.org/licenses/>.
+*/
 
 /* You have to define the following before including this file:
 
@@ -443,7 +445,7 @@ extern USItype __udiv_qrnnd ();
 	     : "=d" (__w)						\
 	     : "%dI" ((USItype)(u)),					\
 	       "dI" ((USItype)(v)));					\
-    __w; })  
+    __w; })
 #endif /* __i960__ */
 
 #if (defined (__mc68000__) || defined (__mc68020__) || defined (__NeXT__) || defined(mc68020)) && W_TYPE_SIZE == 32
@@ -1309,3 +1311,5 @@ unsigned char __clz_tab[];
 #ifndef UDIV_NEEDS_NORMALIZATION
 #define UDIV_NEEDS_NORMALIZATION 0
 #endif
+
+/* longlong.h ends here */

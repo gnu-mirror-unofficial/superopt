@@ -122,7 +122,7 @@ Option names may be abbreviated.
 	in the search.  This slows down the search considerably.
 
 -f<goal-function-name>
-	
+
 	where <goal-function-name> is one of eq, ne, les, ges, lts, gts,
 	leu, geu, ltu, gtu, eq0, ne0, les0, ges0, lts0, gts0, neq, nne,
 	nles, nges, nlts, ngts, nleu, ngeu, nltu, ngtu, neq0, nne0, nles0,
@@ -192,3 +192,9 @@ Massalin.
 The GNU superoptimizer and it's application for tuning GCC are described in
 the proceedings of the ACM SIGPLAN conference on Programming Language
 Design an Implementation (PLDI), 1992.
+
+
+Copyright (C) 1991-1995, 2020 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted provided the copyright notice and this notice are preserved.
