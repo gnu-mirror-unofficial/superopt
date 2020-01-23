@@ -46,7 +46,7 @@ BINDIR	= /usr/local/bin
 INSTALL	= install -c
 FILES	= README COPYING Makefile TODO ChangeLog superopt.c synth.def $(HDRS)
 
-VERSION = `sed 's,char \*version_string = "\([0-9.]*\)";,\1,' < version.h`
+VERSION = `sed '/^char/!d;s,char \*version_string = "\([0-9.]*\)";,\1,' < version.h`
 
 superopt: $(SRCS) $(HDRS)
 	$(CC) $(CFLAGS) -o superopt $(SRCS)
