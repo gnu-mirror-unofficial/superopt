@@ -1,5 +1,11 @@
 2020-01-23  Thien-Thi Nguyen  <ttn@gnu.org>
 
+	[dist] Also distribute AUTHORS file.
+
+	* Makefile (FILES): Add AUTHORS.
+
+2020-01-23  Thien-Thi Nguyen  <ttn@gnu.org>
+
 	[build] Update sed script that mines version info.
 
 	* Makefile (VERSION): Only operate on the

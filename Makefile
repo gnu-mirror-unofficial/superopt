@@ -44,7 +44,7 @@ SRCS	= superopt.c
 HDRS	= run_program.def insn.def goal.def superopt.h version.h longlong.h
 BINDIR	= /usr/local/bin
 INSTALL	= install -c
-FILES	= README COPYING Makefile TODO ChangeLog superopt.c synth.def $(HDRS)
+FILES	= AUTHORS README COPYING Makefile TODO ChangeLog superopt.c synth.def $(HDRS)
 
 VERSION = `sed '/^char/!d;s,char \*version_string = "\([0-9.]*\)";,\1,' < version.h`
 
