@@ -1,5 +1,11 @@
 2020-01-23  Thien-Thi Nguyen  <ttn@gnu.org>
 
+	[C int] Include <stdlib.h> for ‘exit’.
+
+	* superopt.c: #include <stdlib>.
+
+2020-01-23  Thien-Thi Nguyen  <ttn@gnu.org>
+
 	* COPYING: Update to GPLv3.
 
 Sat Jun  3 01:28:17 1995  Torbjorn Granlund  <tege@matematik.su.se>

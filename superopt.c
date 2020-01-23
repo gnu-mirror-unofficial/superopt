@@ -22,6 +22,7 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 #include "superopt.h"
@@ -3080,3 +3081,5 @@ const char ff1_tab[] =
   7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,
   7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,
 };
+
+/* superopt.c ends here */
