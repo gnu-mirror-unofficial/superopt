@@ -1,3 +1,10 @@
+2020-12-21  Thien-Thi Nguyen  <ttn@gnu.org>
+
+	[dist int] Add abstraction: tarname
+
+	* Makefile (tarname): New var.
+	(dist): Use $(tarname).
+
 2020-01-23  Thien-Thi Nguyen  <ttn@gnu.org>
 
 	[dist] Also distribute AUTHORS file.

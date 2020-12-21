@@ -151,10 +151,12 @@ hppa.res: superopt-hppa
 	./superopt-hppa -all $(EXTRA) -max $(MAXCOST) -as >hppa.tmp 2>&1
 	mv hppa.tmp hppa.res
 
+tarname = superopt-$(VERSION)
+
 dist:
-	mkdir superopt-$(VERSION)
-	ln $(FILES) superopt-$(VERSION)
-	tar cf - superopt-$(VERSION) | gzip --best > superopt-$(VERSION).tar.gz
-	rm -rf superopt-$(VERSION)
+	mkdir $(tarname)
+	ln $(FILES) $(tarname)
+	tar cf - $(tarname) | gzip --best > $(tarname).tar.gz
+	rm -rf $(tarname)
 
 # Makefile ends here
