@@ -1,0 +1,29 @@
+HACKING GNU Superoptimizer                                         -*- org -*-
+
+This file is both a guide for newcomers and a todo list for oldstayers.
+It lives in the repo but is not included in the distribution.
+
+* copyright policy
+*** update every year, unconditionally
+*** (if (< 2 (- END BEGIN)) RANGE INDIVIDUAL)
+* repo branch discipline
+*** no ‘master’ -- do not panic!
+*** archive
+    This branch is for what was already released.  It will never be rebased.
+    Its tip will always have a commit title starting with "Release".
+*** next -- stuff for the next release
+    This branch is work for the next release.  It will never be rebased.
+*** p -- "perhaps", "probably"
+    This branch is where largely-stable changes intended for the next release
+    live.  It's very unlikely to undergo rebase, but not entirely impossible.
+    A rebase MUST be announced to the bug-report address.
+    Hackers probably want to start here.
+*** q-TOPIC -- "questionably", "querulously"
+    These are experimental, exploring the particular TOPIC.  They are intended
+    to be ephemeral, undergoing rebase, amendment, and ultimately removal.
+* etc
+
+Copyright (C) 2021 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted provided the copyright notice and this notice are preserved.
