@@ -1,6 +1,6 @@
 # Makefile for GNU Superopt
 
-# Copyright (C) 1991-1995, 2020 Free Software Foundation, Inc.
+# Copyright (C) 1991-1995, 2020, 2021 Free Software Foundation, Inc.
 #
 # This file is part of GNU Superopt.
 #
